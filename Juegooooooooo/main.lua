@@ -1,4 +1,4 @@
-function love.load ()
+function love.load () --new useless comment
   
 Puntos = 0 
 Total = 24
