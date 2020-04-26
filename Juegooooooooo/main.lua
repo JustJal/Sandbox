@@ -1,18 +1,33 @@
 function love.load ()
   
+  require 'Utilities'
+  
   love.keyboard.setKeyRepeat( true ) -- If this is set to true, the key will be pressed every frame. If it's set to false, it won't
+  
+  io.stdout:setvbuf("no") --Disables console output buffering (Makes the output from "print" appear immediately on console)
   
   Total = 24
   player= {
+    
     pos = {
-      x = 5,
-      y = 5
+      real = {
+        x = 0,
+        y = 0
+      },
+      goal = {
+        x = 5,
+        y = 5
+      }
     },
+    
+    speed = 0.1,
+    
+    direction = "",
     
     puntos = 0,
     
-    color = {1, 1, 0, 1},
-    name = "JustJal",
+    color = {bytecolor(235), bytecolor(223), bytecolor(20), 1},
+    name = "DiegoG",
     
     control = {
       
@@ -40,22 +55,27 @@ function love.load ()
     move = {
       
       up = function ()
-        return player.pos.x, player.pos.y - 1
+        return player.pos.goal.x, player.pos.goal.y - 1
       end,
       
       down = function ()
-        return player.pos.x, player.pos.y + 1
+        return player.pos.goal.x, player.pos.goal.y + 1
       end,
       
       right = function ()
-        return player.pos.x + 1, player.pos.y 
+        return player.pos.goal.x + 1, player.pos.goal.y 
       end,
       
       left = function ()
-        return player.pos.x - 1, player.pos.y
+        return player.pos.goal.x - 1, player.pos.goal.y
       end
+      
     }
   }
+  
+  player.move[""] = function ()
+    return player.pos.goal.x, player.pos.goal.y
+  end
   
   TileSize = 32
   
@@ -84,7 +104,24 @@ end
 
 function love.update (dt)
   
-  --This is empty now. Because we previously used to check for user input, but now that has migrated over to love.keypressed at line 137
+  if player.pos.real.x == player.pos.goal.x and player.pos.real.y == player.pos.goal.y then
+    checkCell(player.move[player.direction]())
+  else
+    if player.pos.real.x ~= player.pos.goal.x then
+      if player.pos.real.x > player.pos.goal.x then
+        player.pos.real.x = player.pos.real.x - player.speed
+      else
+        player.pos.real.x = player.pos.real.x + player.speed
+      end
+    end
+    if player.pos.real.y ~= player.pos.goal.y then
+      if player.pos.real.y > player.pos.goal.y then
+        player.pos.real.y = player.pos.real.y - player.speed
+      else
+        player.pos.real.y = player.pos.real.y + player.speed
+      end
+    end
+  end
   
 end 
 
@@ -120,7 +157,7 @@ end
     end
     
     love.graphics.setColor(player.color)
-    love.graphics.circle("fill", player.pos.x * TileSize+(TileSize/2), player.pos.y * TileSize+(TileSize/2), TileSize/2)
+    love.graphics.circle("fill", player.pos.real.x * TileSize+(TileSize/2), player.pos.real.y * TileSize+(TileSize/2), TileSize/2)
     
     love.graphics.print ("Puntaje ="..player.puntos.."/"..Total, 350, 10)
     
@@ -143,40 +180,46 @@ function love.keypressed( key, scancode ) -- There's also function love.keyrelea
     for i, v1 in ipairs (v) do
       if ( key == v1) then
         
-        local newx, newy = player.move[k]() -- These are only useful in this scope
+        player.direction = k
         
-        if Map[newy][newx] == 0  then
-          
-          player.pos.x = newx
-          
-          player.pos.y = newy
-          
-        elseif Map [newy][newx] == 2 then
-          
-          player.pos.x = newx
-          
-          player.pos.y = newy
-          
-          player.puntos = player.puntos + 1
-          
-          Map[newy][newx] = 1 -- I mean, what was the check for? plus, a variable will always equal itself in a ==
-          
-        end
-        if player.puntos >= Total then
-          
-          if Map [newy][newx] == 3 then
-            
-            player.pos.x = newx
-            
-            player.pos.y = newy
-            
-            win = true
-            
-          end
-        end
+        checkCell(player.move[k]())
         
       end
     end
+  end
+  
+end
+
+function checkCell(x,y)
+  
+  if Map[y][x] == 0  then
+    
+    player.pos.goal.x = x
+    player.pos.goal.y = y
+    
+  elseif Map [y][x] == 2 then
+    
+    player.pos.goal.x = x
+    
+    player.pos.goal.y = y
+    
+    player.puntos = player.puntos + 1
+    
+    Map[y][x] = 1 -- I mean, what was the check for? plus, a variable will always equal itself in a ==
+  end
+  
+  if player.puntos >= Total then
+    
+    if Map [y][x] == 3 then
+      
+      player.pos.goal.x = x
+      
+      player.pos.goal.y = y
+      
+      win = true
+      
+    end
+    
   end
   
 end
