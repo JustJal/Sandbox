@@ -1,5 +1,5 @@
 function love.load () --new useless comment
-  
+  --Jal es gay
 Puntos = 0 
 Total = 24
   player= {
