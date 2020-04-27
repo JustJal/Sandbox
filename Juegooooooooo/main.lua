@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-function love.load () --new useless comment
-  --Jal es gay
-Puntos = 0 
-Total = 24
-=======
 function love.load ()
   
   require 'Utilities'
@@ -13,7 +7,7 @@ function love.load ()
   io.stdout:setvbuf("no") --Disables console output buffering (Makes the output from "print" appear immediately on console)
   
   Total = 24
->>>>>>> fe2c1d5db04afa3acbb711883f587671708a5ba8
+  
   player= {
     
     pos = {
