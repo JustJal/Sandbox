@@ -1,43 +1,44 @@
 function love.load ()
   
+  player1CurBullets = 10
+  player2CurBullets = 10
+  
+  player1MaxBullets = 10
+  player2MaxBullets = 10
+  
   playeroneCheck = 1
-  
   playertwoCheck = 2
+  ArenaCheck =     3
+  BulletCheck =    4
   
-  ArenaCheck = 3
-  
-  playerone = {
+    playerone = {
     
-    MaxBullets = {10},
+      color = {0.902, 0.31, 0.141, 1},
     
-    color = {0.902, 0.31, 0.141, 1},
-    
-    pos = {
-      
-      x = 200,
-      y = 250
-    },
-    control ={
-      
-      up=     "up",
-      down=   "down",
-      right=  "right",
-      left=   "left",
-      attack= "space"
-    }
-  }
-  
-  playertwo = {
-    
-    MaxBullets={10},
-    
-    color = {0.937, 0.722, 0.224,1},
-     
       pos = {
+      
+        x = 200,
+        y = 250
+      },
+      control ={
+      
+        up=     "up",
+        down=   "down",
+        right=  "right",
+        left=   "left",
+        shoot=  "space"
+      }
+    }
+  
+    playertwo = {
+    
+      color = {0.937, 0.722, 0.224,1},
+     
+        pos = {
        
-       x = 600,
-       y = 250
-      }, 
+        x = 550,
+        y = 250
+        }, 
       
       control={
         
@@ -45,7 +46,7 @@ function love.load ()
         down=   "s",
         right=  "d",
         left=   "a",
-        attack= "q"
+        shoot=  "q"
       }
     }
     
@@ -56,12 +57,20 @@ function love.load ()
       width=  700,
       height= 500
     },
+    
       color= {0.263, 0.631, 0.525, 1}  
+    }
+    
+    Bullet={
+      x=      0,
+      y=      0,
+      width=  10,
+      height= 10
     }
     
   end
   
-  function love.update (dt)
+    function love.update (dt)
     for k,v in pairs (playerone.control) do -- Movement for each player, ill do a different one for shooting
       
       if (love.keyboard.isDown (v)) then
@@ -186,6 +195,28 @@ function love.load ()
                     playertwo.pos.x = (Arena.car.x + Arena.car.width - 40)
                     playertwo.pos.y = (Arena.car.y + Arena.car.height - 40)
     end 
+    if (love.keyboard.isDown (v)) then --This is for shooting on 4 directions for player 1
+          
+        if v == "up" then
+            
+            playerone.pos.y = (playerone.pos.y - 500 *dt)
+            
+          elseif v == "down" then 
+            
+            playerone.pos.y = (playerone.pos.y + 500 * dt)
+            
+          elseif v == "right" then
+            
+            playerone.pos.x = (playerone.pos.x + 500 * dt)
+            
+          elseif v == "left" then
+            
+            playerone.pos.x = (playerone.pos.x - 500 * dt)
+            
+        end
+      end
+    end 
+    
   end
   
   function love.draw ()
@@ -199,12 +230,14 @@ function love.load ()
         
         love.graphics.setColor  (playerone.color)
         love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, 40, 40)
+        love.graphics.print     ("Bullets= "..player1CurBullets.."/"..player1MaxBullets, 175,20)
       end 
       
       if playertwoCheck == 2 then
           
         love.graphics.setColor  (playertwo.color)
         love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, 40, 40)
+        love.graphics.print     ("Bullets= "..player2CurBullets.."/"..player2MaxBullets, 525,20)
       end
       
     end
