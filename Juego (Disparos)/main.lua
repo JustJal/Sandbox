@@ -9,7 +9,6 @@ function love.load ()
   playeroneCheck = 1
   playertwoCheck = 2
   ArenaCheck =     3
-  BulletCheck =    4
   
     playerone = {
     
@@ -61,13 +60,19 @@ function love.load ()
       color= {0.263, 0.631, 0.525, 1}  
     }
     
-    Bullet={
+    BulletOne={
       x=      0,
       y=      0,
       width=  10,
       height= 10
     }
     
+    BulletTwo={
+      x=      0,
+      y=      0,
+      width=  10,
+      height= 10
+    }
   end
   
     function love.update (dt)
@@ -77,19 +82,19 @@ function love.load ()
           
         if v == "up" then
             
-            playerone.pos.y = (playerone.pos.y - 500 *dt)
+            playerone.pos.y = (playerone.pos.y - 350 * dt)
             
           elseif v == "down" then 
             
-            playerone.pos.y = (playerone.pos.y + 500 * dt)
+            playerone.pos.y = (playerone.pos.y + 350 * dt)
             
           elseif v == "right" then
             
-            playerone.pos.x = (playerone.pos.x + 500 * dt)
+            playerone.pos.x = (playerone.pos.x + 350 * dt)
             
           elseif v == "left" then
             
-            playerone.pos.x = (playerone.pos.x - 500 * dt)
+            playerone.pos.x = (playerone.pos.x - 350 * dt)
             
         end
       end
@@ -100,19 +105,19 @@ function love.load ()
           
         if v == "w" then
             
-            playertwo.pos.y = (playertwo.pos.y - 500 *dt)
+            playertwo.pos.y = (playertwo.pos.y - 350 * dt)
             
           elseif v == "s" then 
             
-            playertwo.pos.y = (playertwo.pos.y + 500 * dt)
+            playertwo.pos.y = (playertwo.pos.y + 350 * dt)
             
           elseif v == "d" then
             
-            playertwo.pos.x = (playertwo.pos.x + 500 * dt)
+            playertwo.pos.x = (playertwo.pos.x + 350 * dt)
             
           elseif v == "a" then
             
-            playertwo.pos.x = (playertwo.pos.x - 500 * dt)
+            playertwo.pos.x = (playertwo.pos.x - 350 * dt)
             
         end
       end
@@ -195,28 +200,113 @@ function love.load ()
                     playertwo.pos.x = (Arena.car.x + Arena.car.width - 40)
                     playertwo.pos.y = (Arena.car.y + Arena.car.height - 40)
     end 
-    if (love.keyboard.isDown (v)) then --This is for shooting on 4 directions for player 1
-          
+    
+    for k,v in pairs (playerone.control) do
+      if (love.keyboard.isDown (v)) and (love.keyboard.isDown ("space")) then --This is for shooting, basicly this part makes the position of the bullet the same as the player and with the boolean value starts the animation until the border of the arena. All of this using an statement if down there for each conditiion
         if v == "up" then
             
-            playerone.pos.y = (playerone.pos.y - 500 *dt)
+          BulletUp = true 
+          BulletOne.x = playerone.pos.x + 15
+          BulletOne.y = playerone.pos.y - 15
+        end
+        
+        if v == "down" then 
             
-          elseif v == "down" then 
-            
-            playerone.pos.y = (playerone.pos.y + 500 * dt)
-            
-          elseif v == "right" then
-            
-            playerone.pos.x = (playerone.pos.x + 500 * dt)
-            
-          elseif v == "left" then
-            
-            playerone.pos.x = (playerone.pos.x - 500 * dt)
-            
+          BulletDown = true
+          BulletOne.x =   playerone.pos.x + 15
+          BulletOne.y =   playerone.pos.y + 15
+        end 
+        
+        if v == "right" then
+          
+          BulletRight = true
+          BulletOne.x =   playerone.pos.x + 15
+          BulletOne.y =   playerone.pos.y + 15
+        end
+        if v == "left" then
+          
+          BulletLeft = true
+          BulletOne.x = playerone.pos.x + 15
+          BulletOne.y = playerone.pos.y + 15
         end
       end
     end 
     
+    if BulletUp == true then --These are the statements for the animation for each direction
+      
+      BulletOne.x = BulletOne.x 
+      BulletOne.y = BulletOne.y - 500 *dt
+      Bull1 =       true -- Used in print 
+      BulletDown =  false -- It bugged when i runned it, so i decided to put this switches
+      BulletRight = false
+      BulletLeft =  false 
+      
+      if BulletOne.y <= Arena.car.y then
+        
+        Bull1 =       false
+        BulletUp =    false
+        BulletDown =  false
+        BulletRight = false 
+        BulletLeft =  false
+      end
+    end
+    
+    if BulletDown == true then
+      
+      BulletOne.x = BulletOne.x
+      BulletOne.y = BulletOne.y + 500 *dt
+      Bull1 =       true
+      BulletUp =    false
+      BulletRight = false
+      BulletLeft =  false
+      
+      if BulletOne.y >= Arena.car.y + Arena.car.height then
+        
+        Bull1 =       false
+        BulletDown =  false
+        BulletUp =    false 
+        BulletRight = false
+        BulletLeft =  false 
+      end 
+    end
+    
+    if BulletRight == true then 
+      
+      BulletOne.x = BulletOne.x + 500 *dt
+      BulletOne.y = BulletOne.y
+      Bull1 =       true
+      BulletUp =    false
+      BulletDown =  false
+      BulletLeft =  false
+      
+      if BulletOne.x >= Arena.car.x + Arena.car.width then
+        
+        Bull1 =       false
+        BulletDown =  false
+        BulletUp =    false 
+        BulletRight = false
+        BulletLeft =  false 
+      end 
+    end
+    
+    if BulletLeft == true then
+      
+      BulletOne.x = BulletOne.x - 500 *dt
+      BulletOne.y = BulletOne.y
+      Bull1 =       true
+      BulletUp =    false
+      BulletDown =  false
+      BulletRight =  false
+      
+      if BulletOne.x <= Arena.car.x then
+        
+        Bull1 =       false
+        BulletDown =  false
+        BulletUp =    false 
+        BulletRight = false
+        BulletLeft =  false 
+      end
+    end
   end
   
   function love.draw ()
@@ -226,18 +316,22 @@ function love.load ()
             love.graphics.rectangle ("fill",Arena.car.x, Arena.car.y, Arena.car.width, Arena.car.height)
       end 
           
-      if playeroneCheck == 1 then -- 
+      if playeroneCheck == 1 then 
         
         love.graphics.setColor  (playerone.color)
         love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, 40, 40)
-        love.graphics.print     ("Bullets= "..player1CurBullets.."/"..player1MaxBullets, 175,20)
+        
+        if Bull1 == true then 
+          love.graphics.setColor  (playerone.color)
+          love.graphics.rectangle ("fill",BulletOne.x, BulletOne.y, BulletOne.width, BulletOne.height)
+        end
       end 
       
       if playertwoCheck == 2 then
           
         love.graphics.setColor  (playertwo.color)
         love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, 40, 40)
-        love.graphics.print     ("Bullets= "..player2CurBullets.."/"..player2MaxBullets, 525,20)
       end
       
+    
     end
