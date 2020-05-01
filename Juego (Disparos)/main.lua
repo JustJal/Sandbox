@@ -61,8 +61,8 @@ function love.load ()
     }
     
     BulletOne={
-      x=      0,
-      y=      0,
+      x=      800,
+      y=      600,
       width=  10,
       height= 10
     }
@@ -82,20 +82,20 @@ function love.load ()
           
         if v == "up" then
             
-            playerone.pos.y = (playerone.pos.y - 350 * dt)
+          playerone.pos.y = (playerone.pos.y - 350 * dt)
             
           elseif v == "down" then 
             
             playerone.pos.y = (playerone.pos.y + 350 * dt)
             
-          elseif v == "right" then
+            elseif v == "right" then
             
-            playerone.pos.x = (playerone.pos.x + 350 * dt)
+              playerone.pos.x = (playerone.pos.x + 350 * dt)
             
-          elseif v == "left" then
+              elseif v == "left" then
             
-            playerone.pos.x = (playerone.pos.x - 350 * dt)
-            
+                playerone.pos.x = (playerone.pos.x - 350 * dt)
+                
         end
       end
     end 
@@ -107,17 +107,17 @@ function love.load ()
             
             playertwo.pos.y = (playertwo.pos.y - 350 * dt)
             
-          elseif v == "s" then 
+            elseif v == "s" then 
             
-            playertwo.pos.y = (playertwo.pos.y + 350 * dt)
+              playertwo.pos.y = (playertwo.pos.y + 350 * dt)
             
-          elseif v == "d" then
+              elseif v == "d" then
             
-            playertwo.pos.x = (playertwo.pos.x + 350 * dt)
+                playertwo.pos.x = (playertwo.pos.x + 350 * dt)
             
-          elseif v == "a" then
+                elseif v == "a" then
             
-            playertwo.pos.x = (playertwo.pos.x - 350 * dt)
+                  playertwo.pos.x = (playertwo.pos.x - 350 * dt)
             
         end
       end
@@ -383,7 +383,7 @@ function love.load ()
       Bull2 =       true
       BulletW =     false
       BulletS =     false
-      BulletA =      false
+      BulletA =     false
       
       if BulletTwo.x >= Arena.car.x + Arena.car.width then
         
@@ -413,6 +413,17 @@ function love.load ()
         BulletA =     false 
       end
     end
+    
+    if BulletTwo.x <= playerone.pos.x + 40 then
+      
+      Win2()
+      
+    elseif BulletTwo.x <= playerone.pos.x then
+      
+      Win2()
+      
+    end
+    
   end
   
   function love.draw ()
@@ -420,6 +431,7 @@ function love.load ()
             
             love.graphics.setColor  (Arena.color)
             love.graphics.rectangle ("fill",Arena.car.x, Arena.car.y, Arena.car.width, Arena.car.height)
+            
       end 
           
       if playeroneCheck == 1 then 
@@ -427,9 +439,11 @@ function love.load ()
         love.graphics.setColor  (playerone.color)
         love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, 40, 40)
         
-        if Bull1 == true then 
+        if Bull1 == true then --Draws the bullet
+          
           love.graphics.setColor  (playerone.color)
           love.graphics.rectangle ("fill",BulletOne.x, BulletOne.y, BulletOne.width, BulletOne.height)
+          
         end
       end 
       
@@ -438,11 +452,21 @@ function love.load ()
         love.graphics.setColor  (playertwo.color)
         love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, 40, 40)
         
-        if Bull2 == true then 
+        if Bull2 == true then -- Draws the bullet
+          
           love.graphics.setColor  (playertwo.color)
           love.graphics.rectangle ("fill",BulletTwo.x, BulletTwo.y, BulletTwo.width, BulletTwo.height)
+          
         end
       end
       
+    if Vic2 == true then
+      love.graphics.print ("Player 2 Wins!", 340, 15)
+    end
     
+  end
+  
+  function Win2 ()
+    Bull2 = false
+    Vic2 = true
     end
