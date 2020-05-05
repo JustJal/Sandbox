@@ -1,14 +1,11 @@
 function love.load ()
   
-  player1CurBullets = 10
-  player2CurBullets = 10
-  
-  player1MaxBullets = 10
-  player2MaxBullets = 10
-  
   playeroneCheck = 1
   playertwoCheck = 2
   ArenaCheck =     3
+  Wall1Check =     4
+  Wall2Check =     5
+  Wall3Check =     6
   
     playerone = {
     
@@ -16,8 +13,8 @@ function love.load ()
     
       pos = {
       
-        x = 200,
-        y = 250
+        x = 55,
+        y = 500
       },
       control ={
       
@@ -35,8 +32,8 @@ function love.load ()
      
         pos = {
        
-        x = 550,
-        y = 250
+        x = 690,
+        y = 60
         }, 
       
       control={
@@ -73,6 +70,28 @@ function love.load ()
       width=  10,
       height= 10
     }
+    
+    Wall1={
+      x=       150,
+      y=       100,
+      width=   30,
+      height=  400
+    }
+    
+    Wall2={
+      x=       625,
+      y=       100,
+      width=   30,
+      height=  400
+    }
+    
+     Wall3={
+      x=       225,
+      y=       250,
+      width=   355,
+      height=  50
+    }
+    
   end
   
     function love.update (dt)
@@ -123,7 +142,7 @@ function love.load ()
       end
     end 
     
-    if playerone.pos.x <= Arena.car.x then -- This long code over there is for checking if the player is in the arena or not. This part is just for the walls 
+    if playerone.pos.x <= Arena.car.x then -- This long code over there is for checking if the player is in the arena or not. This part is just for the walls of the arena
     
         playerone.pos.x = Arena.car.x 
       
@@ -161,6 +180,7 @@ function love.load ()
                     playerone.pos.x = (Arena.car.x + Arena.car.width - 40)
                     playerone.pos.y = (Arena.car.y + Arena.car.height - 40)
     end 
+  
     
     if playertwo.pos.x <= Arena.car.x then -- Same thing but for player two
     
@@ -309,6 +329,7 @@ function love.load ()
     end
       for k,v in pairs (playertwo.control) do
       if (love.keyboard.isDown (v)) and (love.keyboard.isDown ("q")) then --Same but for player two
+        
         if v == "w" then
             
           BulletW = true 
@@ -426,6 +447,60 @@ function love.load ()
       
     end
     
+    
+    if BulletTwo.x <= Wall1.x + Wall1.width and BulletTwo.x >= Wall1.x and BulletTwo.y <= Wall1.y + Wall1.height and BulletTwo.y >= Wall1.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
+    
+        Bull2 =       false
+        BulletS =     false
+        BulletW =     false 
+        BulletD =     false
+        BulletA =     false 
+    end
+    
+    if BulletTwo.x <= Wall2.x + Wall2.width and BulletTwo.x >= Wall2.x and BulletTwo.y <= Wall2.y + Wall2.height and BulletTwo.y >= Wall2.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
+    
+        Bull2 =       false
+        BulletS =     false
+        BulletW =     false 
+        BulletD =     false
+        BulletA =     false 
+    end
+    
+    if BulletTwo.x <= Wall3.x + Wall3.width and BulletTwo.x >= Wall3.x and BulletTwo.y <= Wall3.y + Wall3.height and BulletTwo.y >= Wall3.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
+    
+        Bull2 =       false
+        BulletS =     false
+        BulletW =     false 
+        BulletD =     false
+        BulletA =     false 
+    end
+    
+    if BulletOne.x <= Wall1.x + Wall1.width and BulletOne.x >= Wall1.x and BulletOne.y <= Wall1.y + Wall1.height and BulletOne.y >= Wall1.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+    
+        Bull1 =           false
+        BulletUp =        false
+        BulletDown =      false 
+        BulletRight =     false
+        BulletLeft =      false 
+    end
+    
+     if BulletOne.x <= Wall2.x + Wall2.width and BulletOne.x >= Wall2.x and BulletOne.y <= Wall2.y + Wall2.height and BulletOne.y >= Wall2.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+    
+        Bull1 =           false
+        BulletUp =        false
+        BulletDown =      false 
+        BulletRight =     false
+        BulletLeft =      false 
+    end
+    
+     if BulletOne.x <= Wall3.x + Wall3.width and BulletOne.x >= Wall3.x and BulletOne.y <= Wall3.y + Wall3.height and BulletOne.y >= Wall3.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+    
+        Bull1 =           false
+        BulletUp =        false
+        BulletDown =      false 
+        BulletRight =     false
+        BulletLeft =      false 
+    end
     if Vic1 == true then
     
     love.event.quit ("restart")
@@ -451,36 +526,51 @@ function love.load ()
         love.graphics.setColor  (playerone.color)
         love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, 40, 40)
         
-       
-      end 
-      
-       if Bull1 == true then --Draws the bullet
+          if Bull1 == true then --Draws the bullet
           
           love.graphics.setColor  (playerone.color)
           love.graphics.rectangle ("fill",BulletOne.x, BulletOne.y, BulletOne.width, BulletOne.height)
           
         end
-        
+      end 
+    
       if playertwoCheck == 2 then
           
         love.graphics.setColor  (playertwo.color)
         love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, 40, 40)
         
-       
-      end
-      
-       if Bull2 == true then -- Draws the bullet
+         if Bull2 == true then -- Draws the bullet
           
           love.graphics.setColor  (playertwo.color)
           love.graphics.rectangle ("fill",BulletTwo.x, BulletTwo.y, BulletTwo.width, BulletTwo.height)
           
         end
-        
+      
+      end
+      
     if Vic2 == true then
+      love.graphics.setColor  (playertwo.color)
       love.graphics.print ("Player 2 Wins!", 340, 15)
     end
+    
      if Vic1 == true then
+      love.graphics.setColor (playerone.color)
       love.graphics.print ("Player 1 Wins!", 340, 15)
+    end
+    
+    if Wall1Check == 4 then
+      love.graphics.setColor (playertwo.color)
+      love.graphics.rectangle ("fill", Wall1.x, Wall1.y, Wall1.width, Wall1.height)
+    end
+    
+     if Wall2Check == 5 then
+      love.graphics.setColor (playerone.color)
+      love.graphics.rectangle ("fill", Wall2.x, Wall2.y, Wall2.width, Wall2.height)
+    end
+    
+    if Wall3Check == 6 then
+      love.graphics.setColor (0.251, 0.341, 0.537, 1)
+      love.graphics.rectangle ("fill", Wall3.x, Wall3.y, Wall3.width, Wall3.height)
     end
   end
   
