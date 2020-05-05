@@ -207,7 +207,7 @@ function love.load ()
             
           BulletUp = true 
           BulletOne.x = playerone.pos.x + 15
-          BulletOne.y = playerone.pos.y - 15
+          BulletOne.y = playerone.pos.y + 15
         end
         
         if v == "down" then 
@@ -296,7 +296,7 @@ function love.load ()
       Bull1 =       true
       BulletUp =    false
       BulletDown =  false
-      BulletRight =  false
+      BulletRight = false
       
       if BulletOne.x <= Arena.car.x then
         
@@ -313,7 +313,7 @@ function love.load ()
             
           BulletW = true 
           BulletTwo.x = playertwo.pos.x + 15
-          BulletTwo.y = playertwo.pos.y - 15
+          BulletTwo.y = playertwo.pos.y + 15
         end
         
         if v == "s" then 
@@ -414,16 +414,28 @@ function love.load ()
       end
     end
     
-    if BulletTwo.x <= playerone.pos.x + 40 then
-      
-      Win2()
-      
-    elseif BulletTwo.x <= playerone.pos.x then
+    if BulletTwo.x <= playerone.pos.x + 40 and BulletTwo.x >= playerone.pos.x and BulletTwo.y <= playerone.pos.y + 40 and BulletTwo.y >= playerone.pos.y then --This is a check for the bullet. It tells you if the bullet hit the enemy or not. Player 2 wins
       
       Win2()
       
     end
     
+    if BulletOne.x <= playertwo.pos.x + 40 and BulletOne.x >= playertwo.pos.x and BulletOne.y <= playertwo.pos.y + 40 and BulletOne.y >= playertwo.pos.y then --This is a check for the bullet. It tells you if the bullet hit the enemy or not. Player 1 wins
+      
+      Win1()
+      
+    end
+    
+    if Vic1 == true then
+    
+    love.event.quit ("restart")
+  end
+  
+  if Vic2 == true then
+    
+    love.event.quit ("restart")
+  end
+  
   end
   
   function love.draw ()
@@ -439,34 +451,45 @@ function love.load ()
         love.graphics.setColor  (playerone.color)
         love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, 40, 40)
         
-        if Bull1 == true then --Draws the bullet
+       
+      end 
+      
+       if Bull1 == true then --Draws the bullet
           
           love.graphics.setColor  (playerone.color)
           love.graphics.rectangle ("fill",BulletOne.x, BulletOne.y, BulletOne.width, BulletOne.height)
           
         end
-      end 
-      
+        
       if playertwoCheck == 2 then
           
         love.graphics.setColor  (playertwo.color)
         love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, 40, 40)
         
-        if Bull2 == true then -- Draws the bullet
+       
+      end
+      
+       if Bull2 == true then -- Draws the bullet
           
           love.graphics.setColor  (playertwo.color)
           love.graphics.rectangle ("fill",BulletTwo.x, BulletTwo.y, BulletTwo.width, BulletTwo.height)
           
         end
-      end
-      
+        
     if Vic2 == true then
       love.graphics.print ("Player 2 Wins!", 340, 15)
     end
-    
+     if Vic1 == true then
+      love.graphics.print ("Player 1 Wins!", 340, 15)
+    end
   end
   
   function Win2 ()
     Bull2 = false
     Vic2 = true
-    end
+  end
+  
+  function Win1 ()
+    Bull1 = false
+    Vic1 = true
+  end
