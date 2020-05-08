@@ -7,6 +7,8 @@ function love.load ()
   Wall2Check =     5
   Wall3Check =     6
   
+  PlayerSpeed = 350
+  BulletSpeed = 500
     playerone = {
     
       color = {0.902, 0.31, 0.141, 1},
@@ -16,6 +18,11 @@ function love.load ()
         x = 55,
         y = 500
       },
+      
+      width=  40,
+      
+      height= 40,
+      
       control ={
       
         up=     "up",
@@ -34,7 +41,11 @@ function love.load ()
        
         x = 690,
         y = 60
-        }, 
+      }, 
+      
+      width=  40,
+      
+      height= 40,
       
       control={
         
@@ -91,52 +102,54 @@ function love.load ()
       width=   355,
       height=  50
     }
-    
+  
   end
   
-    function love.update (dt)
+  function love.update (dt)
+
     for k,v in pairs (playerone.control) do -- Movement for each player, ill do a different one for shooting
       
       if (love.keyboard.isDown (v)) then
           
         if v == "up" then
             
-          playerone.pos.y = (playerone.pos.y - 350 * dt)
+          playerone.pos.y = (playerone.pos.y - PlayerSpeed * dt)
             
           elseif v == "down" then 
-            
-            playerone.pos.y = (playerone.pos.y + 350 * dt)
+
+            playerone.pos.y = (playerone.pos.y + PlayerSpeed * dt)
             
             elseif v == "right" then
+
+              playerone.pos.x = (playerone.pos.x + PlayerSpeed * dt)
             
-              playerone.pos.x = (playerone.pos.x + 350 * dt)
-            
-              elseif v == "left" then
-            
-                playerone.pos.x = (playerone.pos.x - 350 * dt)
+            elseif v == "left" then
+
+                playerone.pos.x = (playerone.pos.x - PlayerSpeed * dt)
                 
         end
       end
     end 
+  
     for k,v in pairs (playertwo.control) do 
       
       if (love.keyboard.isDown (v)) then
           
         if v == "w" then
             
-            playertwo.pos.y = (playertwo.pos.y - 350 * dt)
+            playertwo.pos.y = (playertwo.pos.y - PlayerSpeed * dt)
             
             elseif v == "s" then 
             
-              playertwo.pos.y = (playertwo.pos.y + 350 * dt)
+              playertwo.pos.y = (playertwo.pos.y + PlayerSpeed * dt)
             
               elseif v == "d" then
             
-                playertwo.pos.x = (playertwo.pos.x + 350 * dt)
+                playertwo.pos.x = (playertwo.pos.x + PlayerSpeed * dt)
             
                 elseif v == "a" then
             
-                  playertwo.pos.x = (playertwo.pos.x - 350 * dt)
+                  playertwo.pos.x = (playertwo.pos.x - PlayerSpeed * dt)
             
         end
       end
@@ -146,39 +159,43 @@ function love.load ()
     
         playerone.pos.x = Arena.car.x 
       
-          elseif playerone.pos.x >= Arena.car.x + Arena.car.width - 40 then
+          elseif playerone.pos.x >= Arena.car.x + Arena.car.width - playerone.width then
       
-            playerone.pos.x = Arena.car.x + Arena.car.width - 40
+            playerone.pos.x = Arena.car.x + Arena.car.width - playerone.width
       
               elseif playerone.pos.y <= Arena.car.y then
       
                 playerone.pos.y = Arena.car.y
       
-                elseif playerone.pos.y >= Arena.car.y + Arena.car.height - 40 then
+                elseif playerone.pos.y >= Arena.car.y + Arena.car.height - playerone.height then
             
-                  playerone.pos.y = Arena.car.y + Arena.car.height - 40
+                  playerone.pos.y = Arena.car.y + Arena.car.height - playerone.height
             
     end        
     
-    if (playerone.pos.x <= Arena.car.x ) and (playerone.pos.y <= Arena.car.y) then --This part is for the corners
+    if  (playerone.pos.x <= Arena.car.x ) and 
+        (playerone.pos.y <= Arena.car.y)  then --This part is for the corners
             
         playerone.pos.x = Arena.car.x 
         playerone.pos.y = Arena.car.y
             
-          elseif (playerone.pos.x <= Arena.car.x ) and (playerone.pos.y >= Arena.car.y + Arena.car.height - 40) then
+          elseif  (playerone.pos.x <= Arena.car.x )                                      and 
+                  (playerone.pos.y >= Arena.car.y + Arena.car.height - playerone.height) then
             
             playerone.pos.x =  Arena.car.x 
-            playerone.pos.y = (Arena.car.y + Arena.car.height - 40)
+            playerone.pos.y = (Arena.car.y + Arena.car.height - playerone.height)
       
-              elseif (playerone.pos.x >= Arena.car.x + Arena.car.width - 40) and (playerone.pos.y <= Arena.car.y) then
+            elseif  (playerone.pos.x >= Arena.car.x + Arena.car.width - playerone.width) and 
+                    (playerone.pos.y <= Arena.car.y)                                     then
         
-                playerone.pos.x = (Arena.car.x + Arena.car.width - 40)
+                playerone.pos.x = (Arena.car.x + Arena.car.width - playerone.width)
                 playerone.pos.y =  Arena.car.y
         
-                  elseif (playerone.pos.x >= Arena.car.x + Arena.car.width - 40) and (playerone.pos.y >= Arena.car.y + Arena.car.height - 40) then
+              elseif  (playerone.pos.x >= Arena.car.x + Arena.car.width - playerone.width)   and 
+                      (playerone.pos.y >= Arena.car.y + Arena.car.height - playerone.height) then
                   
-                    playerone.pos.x = (Arena.car.x + Arena.car.width - 40)
-                    playerone.pos.y = (Arena.car.y + Arena.car.height - 40)
+                    playerone.pos.x = (Arena.car.x + Arena.car.width - playerone.width)
+                    playerone.pos.y = (Arena.car.y + Arena.car.height - playerone.width)
     end 
   
     
@@ -186,41 +203,45 @@ function love.load ()
     
         playertwo.pos.x = Arena.car.x 
       
-          elseif playertwo.pos.x >= Arena.car.x + Arena.car.width - 40 then
+          elseif playertwo.pos.x >= Arena.car.x + Arena.car.width - playertwo.width then
       
-            playertwo.pos.x = Arena.car.x + Arena.car.width - 40
+            playertwo.pos.x = Arena.car.x + Arena.car.width - playertwo.width
       
               elseif playertwo.pos.y <= Arena.car.y then
       
                 playertwo.pos.y = Arena.car.y
       
-                elseif playertwo.pos.y >= Arena.car.y + Arena.car.height - 40 then
+                elseif playertwo.pos.y >= Arena.car.y + Arena.car.height - playertwo.width then
             
-                  playertwo.pos.y = Arena.car.y + Arena.car.height - 40
+                  playertwo.pos.y = Arena.car.y + Arena.car.height - playertwo.height
             
     end        
     
-    if (playertwo.pos.x <= Arena.car.x ) and (playertwo.pos.y <= Arena.car.y) then
+    if  (playertwo.pos.x <= Arena.car.x ) and 
+        (playertwo.pos.y <= Arena.car.y)  then
             
         playertwo.pos.x = Arena.car.x 
         playertwo.pos.y = Arena.car.y
             
-          elseif (playertwo.pos.x <= Arena.car.x ) and (playertwo.pos.y >= Arena.car.y + Arena.car.height - 40) then
+          elseif  (playertwo.pos.x <= Arena.car.x )                                      and 
+                  (playertwo.pos.y >= Arena.car.y + Arena.car.height - playertwo.height) then
             
             playertwo.pos.x =  Arena.car.x 
-            playertwo.pos.y = (Arena.car.y + Arena.car.height - 40)
+            playertwo.pos.y = (Arena.car.y + Arena.car.height - playertwo.height)
       
-              elseif (playertwo.pos.x >= Arena.car.x + Arena.car.width - 40) and (playertwo.pos.y <= Arena.car.y) then
+            elseif  (playertwo.pos.x >= Arena.car.x + Arena.car.width - playertwo.width) and 
+                    (playertwo.pos.y <= Arena.car.y)                                     then
         
-                playertwo.pos.x = (Arena.car.x + Arena.car.width - 40)
+                playertwo.pos.x = (Arena.car.x + Arena.car.width - playertwo.width)
                 playertwo.pos.y =  Arena.car.y
         
-                  elseif (playertwo.pos.x >= Arena.car.x + Arena.car.width - 40) and (playertwo.pos.y >= Arena.car.y + Arena.car.height - 40) then
+                elseif  (playertwo.pos.x >= Arena.car.x + Arena.car.width - playertwo.width)    and 
+                        (playertwo.pos.y >= Arena.car.y + Arena.car.height - playertwo.height)  then
                   
-                    playertwo.pos.x = (Arena.car.x + Arena.car.width - 40)
-                    playertwo.pos.y = (Arena.car.y + Arena.car.height - 40)
+                    playertwo.pos.x = (Arena.car.x + Arena.car.width - playertwo.width)
+                    playertwo.pos.y = (Arena.car.y + Arena.car.height - playertwo.height)
     end 
-    
+      
     for k,v in pairs (playerone.control) do
       if (love.keyboard.isDown (v)) and (love.keyboard.isDown ("space")) then --This is for shooting, basicly this part makes the position of the bullet the same as the player and with the boolean value starts the animation until the border of the arena. All of this using an statement if down there for each conditiion
         if v == "up" then
@@ -255,7 +276,7 @@ function love.load ()
     if BulletUp == true then --These are the statements for the animation for each direction
       
       BulletOne.x = BulletOne.x 
-      BulletOne.y = BulletOne.y - 500 *dt
+      BulletOne.y = BulletOne.y - BulletSpeed *dt
       Bull1 =       true -- Used in print 
       BulletDown =  false -- It bugged when i runned it, so i decided to put this switches
       BulletRight = false
@@ -274,7 +295,7 @@ function love.load ()
     if BulletDown == true then
       
       BulletOne.x = BulletOne.x
-      BulletOne.y = BulletOne.y + 500 *dt
+      BulletOne.y = BulletOne.y + BulletSpeed *dt
       Bull1 =       true
       BulletUp =    false
       BulletRight = false
@@ -292,7 +313,7 @@ function love.load ()
     
     if BulletRight == true then 
       
-      BulletOne.x = BulletOne.x + 500 *dt
+      BulletOne.x = BulletOne.x + BulletSpeed *dt
       BulletOne.y = BulletOne.y
       Bull1 =       true
       BulletUp =    false
@@ -311,7 +332,7 @@ function love.load ()
     
     if BulletLeft == true then
       
-      BulletOne.x = BulletOne.x - 500 *dt
+      BulletOne.x = BulletOne.x - BulletSpeed *dt
       BulletOne.y = BulletOne.y
       Bull1 =       true
       BulletUp =    false
@@ -362,7 +383,7 @@ function love.load ()
     if BulletW == true then --These are the statements for the animation for each direction, this time for player two
       
       BulletTwo.x = BulletTwo.x 
-      BulletTwo.y = BulletTwo.y - 500 *dt
+      BulletTwo.y = BulletTwo.y - BulletSpeed *dt
       Bull2 =       true -- Used in print 
       BulletS =     false 
       BulletD =     false
@@ -381,7 +402,7 @@ function love.load ()
     if BulletS == true then
       
       BulletTwo.x = BulletTwo.x
-      BulletTwo.y = BulletTwo.y + 500 *dt
+      BulletTwo.y = BulletTwo.y + BulletSpeed *dt
       Bull2 =       true
       BulletW =     false
       BulletD =     false
@@ -399,7 +420,7 @@ function love.load ()
     
     if BulletD == true then 
       
-      BulletTwo.x = BulletTwo.x + 500 *dt
+      BulletTwo.x = BulletTwo.x + BulletSpeed *dt
       BulletTwo.y = BulletTwo.y
       Bull2 =       true
       BulletW =     false
@@ -418,7 +439,7 @@ function love.load ()
     
     if BulletA == true then
       
-      BulletTwo.x = BulletTwo.x - 500 *dt
+      BulletTwo.x = BulletTwo.x - BulletSpeed *dt
       BulletTwo.y = BulletTwo.y
       Bull2 =       true
       BulletW =     false
@@ -435,20 +456,29 @@ function love.load ()
       end
     end
     
-    if BulletTwo.x <= playerone.pos.x + 40 and BulletTwo.x >= playerone.pos.x and BulletTwo.y <= playerone.pos.y + 40 and BulletTwo.y >= playerone.pos.y then --This is a check for the bullet. It tells you if the bullet hit the enemy or not. Player 2 wins
+    if  BulletTwo.x <= playerone.pos.x + playerone.width    and 
+        BulletTwo.x >= playerone.pos.x                      and 
+        BulletTwo.y <= playerone.pos.y + playerone.height   and 
+        BulletTwo.y >= playerone.pos.y                      then --This is a check for the bullet. It tells you if the bullet hit the enemy or not. Player 2 wins
       
       Win2()
       
     end
     
-    if BulletOne.x <= playertwo.pos.x + 40 and BulletOne.x >= playertwo.pos.x and BulletOne.y <= playertwo.pos.y + 40 and BulletOne.y >= playertwo.pos.y then --This is a check for the bullet. It tells you if the bullet hit the enemy or not. Player 1 wins
+    if  BulletOne.x <= playertwo.pos.x + playertwo.width  and 
+        BulletOne.x >= playertwo.pos.x                    and 
+        BulletOne.y <= playertwo.pos.y + playertwo.height and 
+        BulletOne.y >= playertwo.pos.y                    then --This is a check for the bullet. It tells you if the bullet hit the enemy or not. Player 1 wins
       
       Win1()
       
     end
     
     
-    if BulletTwo.x <= Wall1.x + Wall1.width and BulletTwo.x >= Wall1.x and BulletTwo.y <= Wall1.y + Wall1.height and BulletTwo.y >= Wall1.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
+    if  BulletTwo.x <= Wall1.x + Wall1.width  and 
+        BulletTwo.x >= Wall1.x                and 
+        BulletTwo.y <= Wall1.y + Wall1.height and 
+        BulletTwo.y >= Wall1.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
     
         Bull2 =       false
         BulletS =     false
@@ -457,7 +487,10 @@ function love.load ()
         BulletA =     false 
     end
     
-    if BulletTwo.x <= Wall2.x + Wall2.width and BulletTwo.x >= Wall2.x and BulletTwo.y <= Wall2.y + Wall2.height and BulletTwo.y >= Wall2.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
+    if  BulletTwo.x <= Wall2.x + Wall2.width  and 
+        BulletTwo.x >= Wall2.x                and 
+        BulletTwo.y <= Wall2.y + Wall2.height and 
+        BulletTwo.y >= Wall2.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
     
         Bull2 =       false
         BulletS =     false
@@ -466,7 +499,10 @@ function love.load ()
         BulletA =     false 
     end
     
-    if BulletTwo.x <= Wall3.x + Wall3.width and BulletTwo.x >= Wall3.x and BulletTwo.y <= Wall3.y + Wall3.height and BulletTwo.y >= Wall3.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
+    if  BulletTwo.x <= Wall3.x + Wall3.width  and 
+        BulletTwo.x >= Wall3.x                and 
+        BulletTwo.y <= Wall3.y + Wall3.height and 
+        BulletTwo.y >= Wall3.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
     
         Bull2 =       false
         BulletS =     false
@@ -475,7 +511,10 @@ function love.load ()
         BulletA =     false 
     end
     
-    if BulletOne.x <= Wall1.x + Wall1.width and BulletOne.x >= Wall1.x and BulletOne.y <= Wall1.y + Wall1.height and BulletOne.y >= Wall1.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+    if  BulletOne.x <= Wall1.x + Wall1.width  and 
+        BulletOne.x >= Wall1.x                and 
+        BulletOne.y <= Wall1.y + Wall1.height and 
+        BulletOne.y >= Wall1.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
     
         Bull1 =           false
         BulletUp =        false
@@ -484,7 +523,10 @@ function love.load ()
         BulletLeft =      false 
     end
     
-     if BulletOne.x <= Wall2.x + Wall2.width and BulletOne.x >= Wall2.x and BulletOne.y <= Wall2.y + Wall2.height and BulletOne.y >= Wall2.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+     if BulletOne.x <= Wall2.x + Wall2.width  and  
+        BulletOne.x >= Wall2.x                and 
+        BulletOne.y <= Wall2.y + Wall2.height and 
+        BulletOne.y >= Wall2.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
     
         Bull1 =           false
         BulletUp =        false
@@ -493,7 +535,10 @@ function love.load ()
         BulletLeft =      false 
     end
     
-     if BulletOne.x <= Wall3.x + Wall3.width and BulletOne.x >= Wall3.x and BulletOne.y <= Wall3.y + Wall3.height and BulletOne.y >= Wall3.y then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+     if BulletOne.x <= Wall3.x + Wall3.width  and 
+        BulletOne.x >= Wall3.x                and 
+        BulletOne.y <= Wall3.y + Wall3.height and 
+        BulletOne.y >= Wall3.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
     
         Bull1 =           false
         BulletUp =        false
@@ -501,6 +546,7 @@ function love.load ()
         BulletRight =     false
         BulletLeft =      false 
     end
+    
     if Vic1 == true then
     
     love.event.quit ("restart")
@@ -510,7 +556,6 @@ function love.load ()
     
     love.event.quit ("restart")
   end
-  
   end
   
   function love.draw ()
@@ -524,7 +569,7 @@ function love.load ()
       if playeroneCheck == 1 then 
         
         love.graphics.setColor  (playerone.color)
-        love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, 40, 40)
+        love.graphics.rectangle ("fill", playerone.pos.x, playerone.pos.y, playerone.width, playerone.height)
         
           if Bull1 == true then --Draws the bullet
           
@@ -537,7 +582,7 @@ function love.load ()
       if playertwoCheck == 2 then
           
         love.graphics.setColor  (playertwo.color)
-        love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, 40, 40)
+        love.graphics.rectangle ("fill",playertwo.pos.x, playertwo.pos.y, playertwo.width, playertwo.height)
         
          if Bull2 == true then -- Draws the bullet
           
@@ -559,12 +604,12 @@ function love.load ()
     end
     
     if Wall1Check == 4 then
-      love.graphics.setColor (playertwo.color)
+      love.graphics.setColor (0.251, 0.341, 0.537, 1)
       love.graphics.rectangle ("fill", Wall1.x, Wall1.y, Wall1.width, Wall1.height)
     end
     
      if Wall2Check == 5 then
-      love.graphics.setColor (playerone.color)
+      love.graphics.setColor (0.251, 0.341, 0.537, 1)
       love.graphics.rectangle ("fill", Wall2.x, Wall2.y, Wall2.width, Wall2.height)
     end
     
