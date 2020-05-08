@@ -1,5 +1,4 @@
 function love.load ()
-  
   playeroneCheck = 1
   playertwoCheck = 2
   ArenaCheck =     3
@@ -9,6 +8,7 @@ function love.load ()
   
   PlayerSpeed = 350
   BulletSpeed = 500
+  
     playerone = {
     
       color = {0.902, 0.31, 0.141, 1},
@@ -114,18 +114,26 @@ function love.load ()
         if v == "up" then
             
           playerone.pos.y = (playerone.pos.y - PlayerSpeed * dt)
-            
+          
+          direction1 = "up"
+          
           elseif v == "down" then 
 
             playerone.pos.y = (playerone.pos.y + PlayerSpeed * dt)
             
+            direction1 = "down"
+            
             elseif v == "right" then
 
               playerone.pos.x = (playerone.pos.x + PlayerSpeed * dt)
-            
+              
+              direction1 = "right"
+          
             elseif v == "left" then
 
                 playerone.pos.x = (playerone.pos.x - PlayerSpeed * dt)
+                
+                direction1 = "left"
                 
         end
       end
@@ -139,139 +147,63 @@ function love.load ()
             
             playertwo.pos.y = (playertwo.pos.y - PlayerSpeed * dt)
             
+            direction2 = "w"
+            
             elseif v == "s" then 
             
               playertwo.pos.y = (playertwo.pos.y + PlayerSpeed * dt)
+              
+              direction2 = "s"
             
               elseif v == "d" then
             
                 playertwo.pos.x = (playertwo.pos.x + PlayerSpeed * dt)
+                
+                direction2 = "d"
             
                 elseif v == "a" then
             
                   playertwo.pos.x = (playertwo.pos.x - PlayerSpeed * dt)
+                  
+                  direction2 = "a"
             
         end
       end
     end 
     
-    if playerone.pos.x <= Arena.car.x then -- This long code over there is for checking if the player is in the arena or not. This part is just for the walls of the arena
+    CheckPos (playerone,Arena)
     
-        playerone.pos.x = Arena.car.x 
+    CheckPos (playertwo,Arena)
       
-          elseif playerone.pos.x >= Arena.car.x + Arena.car.width - playerone.width then
-      
-            playerone.pos.x = Arena.car.x + Arena.car.width - playerone.width
-      
-              elseif playerone.pos.y <= Arena.car.y then
-      
-                playerone.pos.y = Arena.car.y
-      
-                elseif playerone.pos.y >= Arena.car.y + Arena.car.height - playerone.height then
-            
-                  playerone.pos.y = Arena.car.y + Arena.car.height - playerone.height
-            
-    end        
-    
-    if  (playerone.pos.x <= Arena.car.x ) and 
-        (playerone.pos.y <= Arena.car.y)  then --This part is for the corners
-            
-        playerone.pos.x = Arena.car.x 
-        playerone.pos.y = Arena.car.y
-            
-          elseif  (playerone.pos.x <= Arena.car.x )                                      and 
-                  (playerone.pos.y >= Arena.car.y + Arena.car.height - playerone.height) then
-            
-            playerone.pos.x =  Arena.car.x 
-            playerone.pos.y = (Arena.car.y + Arena.car.height - playerone.height)
-      
-            elseif  (playerone.pos.x >= Arena.car.x + Arena.car.width - playerone.width) and 
-                    (playerone.pos.y <= Arena.car.y)                                     then
-        
-                playerone.pos.x = (Arena.car.x + Arena.car.width - playerone.width)
-                playerone.pos.y =  Arena.car.y
-        
-              elseif  (playerone.pos.x >= Arena.car.x + Arena.car.width - playerone.width)   and 
-                      (playerone.pos.y >= Arena.car.y + Arena.car.height - playerone.height) then
-                  
-                    playerone.pos.x = (Arena.car.x + Arena.car.width - playerone.width)
-                    playerone.pos.y = (Arena.car.y + Arena.car.height - playerone.width)
-    end 
-  
-    
-    if playertwo.pos.x <= Arena.car.x then -- Same thing but for player two
-    
-        playertwo.pos.x = Arena.car.x 
-      
-          elseif playertwo.pos.x >= Arena.car.x + Arena.car.width - playertwo.width then
-      
-            playertwo.pos.x = Arena.car.x + Arena.car.width - playertwo.width
-      
-              elseif playertwo.pos.y <= Arena.car.y then
-      
-                playertwo.pos.y = Arena.car.y
-      
-                elseif playertwo.pos.y >= Arena.car.y + Arena.car.height - playertwo.width then
-            
-                  playertwo.pos.y = Arena.car.y + Arena.car.height - playertwo.height
-            
-    end        
-    
-    if  (playertwo.pos.x <= Arena.car.x ) and 
-        (playertwo.pos.y <= Arena.car.y)  then
-            
-        playertwo.pos.x = Arena.car.x 
-        playertwo.pos.y = Arena.car.y
-            
-          elseif  (playertwo.pos.x <= Arena.car.x )                                      and 
-                  (playertwo.pos.y >= Arena.car.y + Arena.car.height - playertwo.height) then
-            
-            playertwo.pos.x =  Arena.car.x 
-            playertwo.pos.y = (Arena.car.y + Arena.car.height - playertwo.height)
-      
-            elseif  (playertwo.pos.x >= Arena.car.x + Arena.car.width - playertwo.width) and 
-                    (playertwo.pos.y <= Arena.car.y)                                     then
-        
-                playertwo.pos.x = (Arena.car.x + Arena.car.width - playertwo.width)
-                playertwo.pos.y =  Arena.car.y
-        
-                elseif  (playertwo.pos.x >= Arena.car.x + Arena.car.width - playertwo.width)    and 
-                        (playertwo.pos.y >= Arena.car.y + Arena.car.height - playertwo.height)  then
-                  
-                    playertwo.pos.x = (Arena.car.x + Arena.car.width - playertwo.width)
-                    playertwo.pos.y = (Arena.car.y + Arena.car.height - playertwo.height)
-    end 
-      
-    for k,v in pairs (playerone.control) do
-      if (love.keyboard.isDown (v)) and (love.keyboard.isDown ("space")) then --This is for shooting, basicly this part makes the position of the bullet the same as the player and with the boolean value starts the animation until the border of the arena. All of this using an statement if down there for each conditiion
-        if v == "up" then
+      if (love.keyboard.isDown ("space")) then --This is for shooting, basicly this part makes the position of the bullet the same as the player and with the boolean value starts the animation until the border of the arena. All of this using an statement if down there for each conditiion
+        if direction1 == "up" then
             
           BulletUp = true 
           BulletOne.x = playerone.pos.x + 15
           BulletOne.y = playerone.pos.y + 15
         end
         
-        if v == "down" then 
+        if direction1 == "down" then 
             
           BulletDown = true
           BulletOne.x =   playerone.pos.x + 15
           BulletOne.y =   playerone.pos.y + 15
         end 
         
-        if v == "right" then
+        if direction1 == "right" then
           
           BulletRight = true
           BulletOne.x =   playerone.pos.x + 15
           BulletOne.y =   playerone.pos.y + 15
         end
-        if v == "left" then
+        if direction1 == "left" then
           
           BulletLeft = true
           BulletOne.x = playerone.pos.x + 15
           BulletOne.y = playerone.pos.y + 15
         end
       end
-    end 
+
     
     if BulletUp == true then --These are the statements for the animation for each direction
       
@@ -348,37 +280,36 @@ function love.load ()
         BulletLeft =  false 
       end
     end
-      for k,v in pairs (playertwo.control) do
-      if (love.keyboard.isDown (v)) and (love.keyboard.isDown ("q")) then --Same but for player two
+    
+      if love.keyboard.isDown ("q") then --Same but for player two
         
-        if v == "w" then
+        if direction2 == "w" then
             
           BulletW = true 
           BulletTwo.x = playertwo.pos.x + 15
           BulletTwo.y = playertwo.pos.y + 15
         end
         
-        if v == "s" then 
+        if direction2 == "s" then 
             
           BulletS = true
           BulletTwo.x =   playertwo.pos.x + 15
           BulletTwo.y =   playertwo.pos.y + 15
         end 
         
-        if v == "a" then
+        if direction2 == "a" then
           
           BulletA = true
           BulletTwo.x =   playertwo.pos.x + 15
           BulletTwo.y =   playertwo.pos.y + 15
         end
-        if v == "d" then
+        if direction2 == "d" then
           
           BulletD = true
           BulletTwo.x = playertwo.pos.x + 15
           BulletTwo.y = playertwo.pos.y + 15
         end
       end
-    end 
     
     if BulletW == true then --These are the statements for the animation for each direction, this time for player two
       
@@ -474,78 +405,14 @@ function love.load ()
       
     end
     
+    CheckBullet1Pos (BulletOne, Wall1)
+    CheckBullet1Pos (BulletOne, Wall2)
+    CheckBullet1Pos (BulletOne, Wall3)
     
-    if  BulletTwo.x <= Wall1.x + Wall1.width  and 
-        BulletTwo.x >= Wall1.x                and 
-        BulletTwo.y <= Wall1.y + Wall1.height and 
-        BulletTwo.y >= Wall1.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
-    
-        Bull2 =       false
-        BulletS =     false
-        BulletW =     false 
-        BulletD =     false
-        BulletA =     false 
-    end
-    
-    if  BulletTwo.x <= Wall2.x + Wall2.width  and 
-        BulletTwo.x >= Wall2.x                and 
-        BulletTwo.y <= Wall2.y + Wall2.height and 
-        BulletTwo.y >= Wall2.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
-    
-        Bull2 =       false
-        BulletS =     false
-        BulletW =     false 
-        BulletD =     false
-        BulletA =     false 
-    end
-    
-    if  BulletTwo.x <= Wall3.x + Wall3.width  and 
-        BulletTwo.x >= Wall3.x                and 
-        BulletTwo.y <= Wall3.y + Wall3.height and 
-        BulletTwo.y >= Wall3.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2 
-    
-        Bull2 =       false
-        BulletS =     false
-        BulletW =     false 
-        BulletD =     false
-        BulletA =     false 
-    end
-    
-    if  BulletOne.x <= Wall1.x + Wall1.width  and 
-        BulletOne.x >= Wall1.x                and 
-        BulletOne.y <= Wall1.y + Wall1.height and 
-        BulletOne.y >= Wall1.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
-    
-        Bull1 =           false
-        BulletUp =        false
-        BulletDown =      false 
-        BulletRight =     false
-        BulletLeft =      false 
-    end
-    
-     if BulletOne.x <= Wall2.x + Wall2.width  and  
-        BulletOne.x >= Wall2.x                and 
-        BulletOne.y <= Wall2.y + Wall2.height and 
-        BulletOne.y >= Wall2.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
-    
-        Bull1 =           false
-        BulletUp =        false
-        BulletDown =      false 
-        BulletRight =     false
-        BulletLeft =      false 
-    end
-    
-     if BulletOne.x <= Wall3.x + Wall3.width  and 
-        BulletOne.x >= Wall3.x                and 
-        BulletOne.y <= Wall3.y + Wall3.height and 
-        BulletOne.y >= Wall3.y                then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
-    
-        Bull1 =           false
-        BulletUp =        false
-        BulletDown =      false 
-        BulletRight =     false
-        BulletLeft =      false 
-    end
+    CheckBullet2Pos (BulletTwo, Wall1)
+    CheckBullet2Pos (BulletTwo, Wall2)
+    CheckBullet2Pos (BulletTwo, Wall3)
+   
     
     if Vic1 == true then
     
@@ -627,4 +494,75 @@ function love.load ()
   function Win1 ()
     Bull1 = false
     Vic1 = true
+  end
+  
+  function CheckPos (a,b)
+    if a.pos.x <= b.car.x then -- This long code over there is for checking if the player is in the arena or not. This part is just for the walls of the arena
+    
+        a.pos.x = b.car.x 
+      
+          elseif a.pos.x >= b.car.x + b.car.width - a.width then
+      
+            a.pos.x = b.car.x + b.car.width - a.width
+      
+              elseif a.pos.y <= b.car.y then
+      
+               a.pos.y = b.car.y
+      
+                elseif a.pos.y >= b.car.y + b.car.height - a.height then
+            
+                  a.pos.y = b.car.y + b.car.height - a.height
+            
+    end        
+    
+    if  (a.pos.x <= b.car.x ) and 
+        (a.pos.y <= b.car.y)  then --This part is for the corners
+            
+        a.pos.x = b.car.x 
+        a.pos.y = b.car.y
+            
+          elseif  (a.pos.x <= b.car.x )                          and 
+                  (a.pos.y >= b.car.y + b.car.height - a.height) then
+            
+            a.pos.x =  b.car.x 
+            a.pos.y = (b.car.y + b.car.height - a.height)
+      
+            elseif  (a.pos.x >= b.car.x + b.car.width - a.width) and 
+                    (a.pos.y <= b.car.y)                         then
+        
+              a.pos.x = (b.car.x + b.car.width - a.width)
+              a.pos.y =  b.car.y
+        
+              elseif  (a.pos.x >= b.car.x + b.car.width - a.width)   and 
+                      (a.pos.y >= b.car.y + b.car.height - a.height) then
+                  
+                a.pos.x = (b.car.x + b.car.width - a.width)
+                a.pos.y = (b.car.y + b.car.height - a.width)
+    end 
+  end
+  function CheckBullet1Pos (BulletOne, Wall)
+    if  BulletOne.x <= Wall.x + Wall.width  and 
+        BulletOne.x >= Wall.x               and 
+        BulletOne.y <= Wall.y + Wall.height and 
+        BulletOne.y >= Wall.y               then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 1
+    
+        Bull1 =           false
+        BulletUp =        false
+        BulletDown =      false 
+        BulletRight =     false
+        BulletLeft =      false 
+    end
+  end
+  function CheckBullet2Pos (BulletTwo, Wall)
+    if  BulletTwo.x <= Wall.x + Wall.width  and 
+        BulletTwo.x >= Wall.x               and 
+        BulletTwo.y <= Wall.y + Wall.height and 
+        BulletTwo.y >= Wall.y               then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2
+    
+        Bull1 =           false
+        BulletW =         false
+        BulletS =         false 
+        BulletD =         false
+        BulletA =         false 
+    end
   end
