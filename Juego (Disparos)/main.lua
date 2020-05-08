@@ -204,8 +204,7 @@ function love.load ()
         end
       end
 
-    
-    if BulletUp == true then --These are the statements for the animation for each direction
+      if BulletUp == true then --These are the statements for the animation for each direction
       
       BulletOne.x = BulletOne.x 
       BulletOne.y = BulletOne.y - BulletSpeed *dt
@@ -236,10 +235,10 @@ function love.load ()
       if BulletOne.y >= Arena.car.y + Arena.car.height then
         
         Bull1 =       false
+        BulletUp =    false
         BulletDown =  false
-        BulletUp =    false 
-        BulletRight = false
-        BulletLeft =  false 
+        BulletRight = false 
+        BulletLeft =  false
       end 
     end
     
@@ -255,10 +254,10 @@ function love.load ()
       if BulletOne.x >= Arena.car.x + Arena.car.width then
         
         Bull1 =       false
+        BulletUp =    false
         BulletDown =  false
-        BulletUp =    false 
-        BulletRight = false
-        BulletLeft =  false 
+        BulletRight = false 
+        BulletLeft =  false
       end 
     end
     
@@ -273,14 +272,14 @@ function love.load ()
       
       if BulletOne.x <= Arena.car.x then
         
-        Bull1 =       false
+        BullDraw =    false
+        BulletUp =    false
         BulletDown =  false
-        BulletUp =    false 
-        BulletRight = false
+        BulletRight = false 
         BulletLeft =  false 
       end
     end
-    
+   
       if love.keyboard.isDown ("q") then --Same but for player two
         
         if direction2 == "w" then
@@ -311,22 +310,22 @@ function love.load ()
         end
       end
     
-    if BulletW == true then --These are the statements for the animation for each direction, this time for player two
+  if BulletW == true then --These are the statements for the animation for each direction
       
       BulletTwo.x = BulletTwo.x 
       BulletTwo.y = BulletTwo.y - BulletSpeed *dt
-      Bull2 =       true -- Used in print 
-      BulletS =     false 
-      BulletD =     false
-      BulletA =     false 
+      Bull2 =    true -- Used in print 
+      BulletS =  false -- It bugged when i runned it, so i decided to put this switches
+      BulletD =  false
+      BulletA =  false 
       
       if BulletTwo.y <= Arena.car.y then
         
-        Bull2 =       false
-        BulletW =     false
-        BulletS =     false
-        BulletD =     false 
-        BulletA =     false
+        Bull2 =    false
+        BulletW =  false
+        BulletS =  false
+        BulletD =  false 
+        BulletA =  false
       end
     end
     
@@ -334,18 +333,18 @@ function love.load ()
       
       BulletTwo.x = BulletTwo.x
       BulletTwo.y = BulletTwo.y + BulletSpeed *dt
-      Bull2 =       true
-      BulletW =     false
-      BulletD =     false
-      BulletA =     false
+      Bull2 =    true
+      BulletW =  false
+      BulletD =  false
+      BulletA =  false
       
       if BulletTwo.y >= Arena.car.y + Arena.car.height then
         
-        Bull2 =       false
-        BulletS =     false
-        BulletW =     false 
-        BulletD =     false
-        BulletA =     false 
+        Bull2 =    false
+        BulletW =  false
+        BulletS =  false 
+        BulletD =  false
+        BulletA =  false 
       end 
     end
     
@@ -353,18 +352,18 @@ function love.load ()
       
       BulletTwo.x = BulletTwo.x + BulletSpeed *dt
       BulletTwo.y = BulletTwo.y
-      Bull2 =       true
-      BulletW =     false
-      BulletS =     false
-      BulletA =     false
+      Bull2 =    true
+      BulletW =  false
+      BulletS =  false
+      BulletA =  false
       
       if BulletTwo.x >= Arena.car.x + Arena.car.width then
         
-        Bull2 =       false
-        BulletS =     false
-        BulletW =     false 
-        BulletD =     false
-        BulletA =     false 
+        Bull2 =    false
+        BulletW =  false
+        BulletS =  false 
+        BulletD =  false
+        BulletA =  false 
       end 
     end
     
@@ -372,18 +371,18 @@ function love.load ()
       
       BulletTwo.x = BulletTwo.x - BulletSpeed *dt
       BulletTwo.y = BulletTwo.y
-      Bull2 =       true
-      BulletW =     false
-      BulletS =     false
-      BulletD =     false
+      Bull2 =    true
+      BulletW =  false
+      BulletS =  false
+      BulletD =  false
       
       if BulletTwo.x <= Arena.car.x then
         
-        Bull2 =       false
-        BulletS =     false
-        BulletW =     false 
-        BulletD =     false
-        BulletA =     false 
+        Bull2 =    false
+        BulletW =  false
+        BulletS =  false 
+        BulletD =  false
+        BulletA =  false 
       end
     end
     
@@ -559,7 +558,7 @@ function love.load ()
         BulletTwo.y <= Wall.y + Wall.height and 
         BulletTwo.y >= Wall.y               then --This is a check for the bullet. It tells you if the bullet hit the wall  or not. Player 2
     
-        Bull1 =           false
+        Bull2 =           false
         BulletW =         false
         BulletS =         false 
         BulletD =         false
