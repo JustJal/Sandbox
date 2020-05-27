@@ -44,7 +44,7 @@ namespace RootsApplication{
             return Discriminante;
         }
         public void DisplayRoots(){
-            if (Disc == true)
+            if (Disc==true)
             {
                 Console.WriteLine("Las raices de tu polinomio son:{0}, {1}", Raiz1, Raiz2);
                 return;
