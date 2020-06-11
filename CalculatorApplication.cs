@@ -1,8 +1,11 @@
 using System; 
 
-namespace CalculatorApplication{
-    class NumberManipulator {
-        public int FindMax (int num1, int num2){
+namespace CalculatorApplication
+{
+    class NumberManipulator 
+    {
+        public int FindMax (int num1, int num2)
+        {
             /*local variable declaration */
             int result;
 
@@ -13,7 +16,8 @@ namespace CalculatorApplication{
             return result;
             }
 
-            static void Main (string[] args){
+            static void Main (string[] args)
+            {
                /*local variable definition */
 
                  int a = 100;   
@@ -29,4 +33,3 @@ namespace CalculatorApplication{
           
         }
     }
-}
