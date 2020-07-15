@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\bin\Debug\netcoreapp3.1\TestTCPClient.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\bin\Debug\netcoreapp3.1\TestTCPClient.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\bin\Debug\netcoreapp3.1\TestTCPClient.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\bin\Debug\netcoreapp3.1\TestTCPClient.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\bin\Debug\netcoreapp3.1\TestTCPClient.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\bin\Debug\netcoreapp3.1\TestTCPClient.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TestTCPClient\obj\Debug\netcoreapp3.1\TestTCPClient.genruntimeconfig.cache

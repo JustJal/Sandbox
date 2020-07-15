@@ -1,0 +1,10 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\bin\Debug\TCPClientAPP.exe.config
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\bin\Debug\TCPClientAPP.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\bin\Debug\TCPClientAPP.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.Form1.resources
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.Properties.Resources.resources
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.csproj.GenerateResource.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\TestTCPClient\TCPClientAPP\obj\Debug\TCPClientAPP.pdb
