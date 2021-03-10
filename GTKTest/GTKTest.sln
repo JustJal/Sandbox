@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTKTest", "GTKTest\GTKTest.csproj", "{217AAB38-2BD4-4F39-A840-DBA842A9619D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{217AAB38-2BD4-4F39-A840-DBA842A9619D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217AAB38-2BD4-4F39-A840-DBA842A9619D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217AAB38-2BD4-4F39-A840-DBA842A9619D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217AAB38-2BD4-4F39-A840-DBA842A9619D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07809557-19D9-421E-AECB-1D454B1616FD}
+	EndGlobalSection
+EndGlobal

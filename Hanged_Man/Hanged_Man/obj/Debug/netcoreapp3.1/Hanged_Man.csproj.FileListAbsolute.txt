@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\bin\Debug\netcoreapp3.1\Hanged_Man.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\bin\Debug\netcoreapp3.1\Hanged_Man.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\bin\Debug\netcoreapp3.1\Hanged_Man.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\bin\Debug\netcoreapp3.1\Hanged_Man.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\bin\Debug\netcoreapp3.1\Hanged_Man.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\bin\Debug\netcoreapp3.1\Hanged_Man.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Hanged_Man\Hanged_Man\obj\Debug\netcoreapp3.1\Hanged_Man.genruntimeconfig.cache

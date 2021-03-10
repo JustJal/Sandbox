@@ -1,0 +1,15 @@
+El nombre del equipo es: Barcelona
+El nombre del capitan es: Lionel Messi
+El equipo anoto: 345 goles
+El equipo es procedente de: España
+El equipo fue: ganador
+El nombre del equipo es: Real Madrid
+El nombre del capitan es: Karim Benzema
+El equipo anoto: 25 goles
+El equipo es procedente de: España
+El equipo fue: perdedor
+El nombre del equipo es: Valencia FC
+El nombre del capitan es: No se xd
+El equipo anoto: 2 goles
+El equipo es procedente de: España
+El equipo fue: perdedor
