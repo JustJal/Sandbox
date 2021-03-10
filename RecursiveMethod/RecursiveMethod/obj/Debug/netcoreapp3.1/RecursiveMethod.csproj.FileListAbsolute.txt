@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\bin\Debug\netcoreapp3.1\RecursiveMethod.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\bin\Debug\netcoreapp3.1\RecursiveMethod.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\bin\Debug\netcoreapp3.1\RecursiveMethod.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\bin\Debug\netcoreapp3.1\RecursiveMethod.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\bin\Debug\netcoreapp3.1\RecursiveMethod.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\bin\Debug\netcoreapp3.1\RecursiveMethod.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\RecursiveMethod\RecursiveMethod\obj\Debug\netcoreapp3.1\RecursiveMethod.genruntimeconfig.cache
