@@ -62,10 +62,16 @@ namespace BinaryTreeMethods
         /// <summary>
         /// The instance's value
         /// </summary>
-        public T Value { get; internal set; }
+        public T Value
+        {
+            get => Val;
+            set => Val = value;
+        }
+        public ref T ValueRef => ref Val;
+        T Val;
         
-        internal NodeState State { get; private set; }
-        internal enum NodeState : byte { Empty, Half, Full }
+        public NodeState State { get; private set; }
+        public enum NodeState : byte { Empty, Half, Full }
         private void UpdateState()
         {
             byte i = 0;
@@ -99,15 +105,6 @@ namespace BinaryTreeMethods
             Parent = parent;
             ChildLeft = childLeft;
             ChildRight = childRight;
-        }
-
-        internal BinaryTreeNode(BinaryTreeNode<T> other)//Copy constructor
-        {
-            ChildLeft = other.ChildLeft__field;
-            ChildRight = other.ChildRight__field;
-            Parent = other.Parent;
-            ParentTree = other.ParentTree;
-            Value = other.Value;
         }
     }
 }
