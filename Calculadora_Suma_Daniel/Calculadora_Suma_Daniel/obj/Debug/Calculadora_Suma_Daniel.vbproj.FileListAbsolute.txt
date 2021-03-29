@@ -1,0 +1,12 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\bin\Debug\Calculadora_Suma_Daniel.exe.config
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\bin\Debug\Calculadora_Suma_Daniel.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\bin\Debug\Calculadora_Suma_Daniel.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\bin\Debug\Calculadora_Suma_Daniel.xml
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.vbprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.BtnSumar.resources
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.Resources.resources
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.vbproj.GenerateResource.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.vbproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.xml
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\Calculadora_Suma_Daniel\Calculadora_Suma_Daniel\obj\Debug\Calculadora_Suma_Daniel.pdb
