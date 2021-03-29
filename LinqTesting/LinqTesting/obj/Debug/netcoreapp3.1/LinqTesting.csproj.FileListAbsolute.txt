@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\bin\Debug\netcoreapp3.1\LinqTesting.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\bin\Debug\netcoreapp3.1\LinqTesting.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\bin\Debug\netcoreapp3.1\LinqTesting.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\bin\Debug\netcoreapp3.1\LinqTesting.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\bin\Debug\netcoreapp3.1\LinqTesting.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\bin\Debug\netcoreapp3.1\LinqTesting.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\LinqTesting\LinqTesting\obj\Debug\netcoreapp3.1\LinqTesting.genruntimeconfig.cache
