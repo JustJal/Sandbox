@@ -62,47 +62,64 @@ namespace BinaryTreeMethods
             }
 
         }
-        static void Delete_Node(Node Root, Node DeleteNode) //It goes where it has to go but doesnt make anything.
+        static void Delete_Node(Node TreeNode, Node DeleteNode) //It goes where it has to go but doesnt make anything.
         {
-            if (Root is null)return;
+            if (TreeNode is null)return;
 
-            if (DeleteNode.Key < Root.Key)
+            if (DeleteNode.Key < TreeNode.Key)
             {
-                Delete_Node(Root.Left, DeleteNode); //We check the left one
+                Delete_Node(TreeNode.Left, DeleteNode); //We check the left one
             }
-            else if (DeleteNode.Key > Root.Key)
+            else if (DeleteNode.Key > TreeNode.Key)
             {
-                Delete_Node(Root.Right, DeleteNode); // We check the right one
+                Delete_Node(TreeNode.Right, DeleteNode); // We check the right one
             }
 
-            if (Root.Key == DeleteNode.Key)
+            if (TreeNode.Key.Equals(DeleteNode.Key))
             {
                 //No child nodes
-                if (Root.Left == null && Root.Right == null)
+                if (TreeNode.Left == null && TreeNode.Right == null)
                 {
-                    Root = null;
+                    TreeNode = null;
+                    return;
                 }
-                else if (Root.Left == null) //No left child root
+                else if (TreeNode.Left == null) //No left child root
                 {
-                    Root = Root.Right; // We swap the root we are looking to delete to a child 
-                    Root.Right = null;//and then we delete it
-
+                    TreeNode = TreeNode.Right; // We swap the root we are looking to delete to a child 
+                    TreeNode.Right = null; //and then we delete it
+                    return;
                 }
-                else if (Root.Right == null)//No right child root
+                else if (TreeNode.Right == null)//No right child root
                 {
-                    Root = Root.Left;
-                    Root.Left = null;
+                    TreeNode = TreeNode.Left;
+                    TreeNode.Left = null;
+                    return;
                 }
                 else // It is a complete node
                 {
-                    Node Min = FindMin(Root.Left);
-                    Root = Min;
-                    Delete_Node(Root.Left, Min);
-
+                    Node Min = FindMin(TreeNode.Left);
+                    TreeNode = Min;
+                    Delete_Node(TreeNode.Left, Min);
                 }
             }
         }
+        static Node FindMyParent(Node TreeNode, Node Child)
+        {
+            if (TreeNode is null) return TreeNode;
 
+            if (Child.Key < TreeNode.Key)
+            {
+                return FindMyParent(TreeNode.Left, Child); //We check the left one
+            }
+            else if (Child.Key > TreeNode.Key)
+            {
+                return FindMyParent(TreeNode.Right, Child); // We check the right one
+            }
+
+            if (TreeNode.Left.Equals(Child) || TreeNode.Right.Equals(Child)) return TreeNode;
+
+            return TreeNode;
+        }
         static Node FindMin(Node Temp) // This Method search for the nearest left node 
         {
             Node ThisOne = Temp;
@@ -142,7 +159,7 @@ namespace BinaryTreeMethods
             Console.WriteLine("\n PreOrder transversal before inserting:");
             PreOrder(Root);
 
-            InsertNode(Root, 12);
+            InsertNode(TreeNode, 12);
             Console.WriteLine("\n PreOrder transversal after inserting:");
             PreOrder(Root);
 
@@ -151,7 +168,7 @@ namespace BinaryTreeMethods
             PreOrder(Root);
 
             InvertTree(Root); //I invert it again because its easier to read
-            Delete_Node(Root, Root.Left.Right);
+            Delete_Node(Root, Root.Left);
             Console.WriteLine("\n PreOrder Transversal after Deleting:");
             PreOrder(Root);
 
