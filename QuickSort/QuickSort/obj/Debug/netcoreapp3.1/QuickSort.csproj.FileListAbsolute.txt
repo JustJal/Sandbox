@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\QuickSort.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\QuickSort.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\QuickSort.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\QuickSort.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\QuickSort.genruntimeconfig.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\bin\Debug\netcoreapp3.1\Sorting Methods.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\bin\Debug\netcoreapp3.1\Sorting Methods.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\bin\Debug\netcoreapp3.1\Sorting Methods.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\bin\Debug\netcoreapp3.1\Sorting Methods.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\bin\Debug\netcoreapp3.1\Sorting Methods.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\bin\Debug\netcoreapp3.1\Sorting Methods.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\Sorting Methods.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\QuickSort\QuickSort\obj\Debug\netcoreapp3.1\Sorting Methods.pdb
