@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\bin\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\bin\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\bin\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\bin\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\bin\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\bin\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\4-Kyu Permutations Problem (CodeWars)\4-Kyu Permutations Problem (CodeWars)\obj\Debug\netcoreapp3.1\4-Kyu Permutations Problem (CodeWars).genruntimeconfig.cache

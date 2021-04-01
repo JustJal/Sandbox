@@ -3,21 +3,21 @@ using System.Linq;
 
 namespace RecursiveMethod
 {
-    class Recursive 
+    class Recursive
     {
         private string Recursive_Method(int n, string tail = "")
         {
             /*if (n > 9)
-                throw new InvalidOperationException("n cannot be larger than 9");*/ 
+                throw new InvalidOperationException("n cannot be larger than 9");*/
             /* I dont need that exception since Enumerable.Repeat() 
             admits every type and not just a char as new string(char, int)*/
 
-            if(n>0)
-                return Recursive_Method(n-1, string.Concat(Enumerable.Repeat(n.ToString(),n)) + tail);
+            if (n > 0)
+                return Recursive_Method(n - 1, string.Concat(Enumerable.Repeat(n.ToString(), n)) + tail);
 
             return tail;
         }
-        
+
         private int Factorial(int n, int Returner = 1)
         {
             if (n > 0)
