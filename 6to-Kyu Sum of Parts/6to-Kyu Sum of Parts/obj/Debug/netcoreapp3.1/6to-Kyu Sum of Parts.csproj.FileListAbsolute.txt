@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\bin\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\bin\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\bin\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\bin\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\bin\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\bin\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\6to-Kyu Sum of Parts\6to-Kyu Sum of Parts\obj\Debug\netcoreapp3.1\6to-Kyu Sum of Parts.genruntimeconfig.cache
