@@ -1,25 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 namespace Permutations
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     public class Permutations
     {
-        public static List<string> PermutationsList = new List<string>();
-        static int NumberOfStrings = 0;
+
         static string Word { get; set; }
         public static List<string> SinglePermutations(string word)
         {
-            int MaxPermutations = word.Length <= 2 ? word.Length : Factorial(word.Length) / word.Length;
-            // The max permutations when N > 2 is N!/N (I learned about permutations before making this code)
+
+            int NumberOfStrings = 0;
+            List<string> PermutationsList = new List<string>();
+
+
+            int MaxPermutations = GetMaxPermutations(word);
 
             if (!PermutationsList.Contains(word))
+            {
                 PermutationsList.Add(word); // The word is a solution
-
+                NumberOfStrings++;
+            }
+                
             Char[] WordArray = word.ToCharArray();
 
-            for (int i = 0; i < word.Length - 1; i++)
+            while (!(NumberOfStrings == MaxPermutations))
             {
-                for (int j = 0; j < word.Length - 1 - i; j++)
+                for (int j = 0; j < word.Length - 1; j++)
                 {
                     var temp = WordArray[j];
                     WordArray[j] = WordArray[j + 1];
@@ -31,18 +39,30 @@ namespace Permutations
                         NumberOfStrings++;
                     }
                 }
-                if (NumberOfStrings == MaxPermutations)
-                    break;
             }
-
             return PermutationsList;
         }
-        private static int Factorial(int n, int Returner = 1)
+        private static int GetMaxPermutations(string Word)
         {
-            if (n > 0)
-                return Factorial(n - 1, Returner * n);
+            int NumberOfDifferents = 1;
+            Char[] WordArray = Word.ToCharArray();
+            var Counter = WordArray.GroupBy(x => x).Where(x => x.Count() != 1);
 
-            return Returner;
+            foreach(var x in Counter)
+            {
+                NumberOfDifferents = NumberOfDifferents * Factorial(x.Count());
+            }
+
+            int MaxPermutations = Factorial(Word.Length) / NumberOfDifferents;
+
+            return MaxPermutations;
+        }
+        private static int Factorial(int n)
+        {
+            for (int i = n - 1; i > 0; i--)
+                n *= i;
+
+            return n;
         }
 
         private static string GetString(char[] array)
@@ -51,6 +71,7 @@ namespace Permutations
 
             return str;
         }
+
         public static void PrintList(List<string> List)
         {
             foreach (string a in List)
@@ -64,8 +85,7 @@ namespace Permutations
     {
         static void Main(string[] args)
         {
-            Permutations.SinglePermutations("aabb");
-            Permutations.PrintList(Permutations.PermutationsList);
+            Permutations.PrintList(Permutations.SinglePermutations("aabb"));
             Console.ReadKey();
         }
     }
