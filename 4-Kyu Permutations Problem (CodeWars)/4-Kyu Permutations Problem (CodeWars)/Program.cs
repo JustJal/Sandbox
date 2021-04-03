@@ -8,40 +8,42 @@ namespace Permutations
     {
 
         static string Word { get; set; }
+        static int NumberOfStrings { get; set; }
         public static List<string> SinglePermutations(string word)
         {
-
-            int NumberOfStrings = 0;
+            NumberOfStrings = 1;
             List<string> PermutationsList = new List<string>();
-
-
             int MaxPermutations = GetMaxPermutations(word);
+            PermutationsList.Add(word);
 
-            if (!PermutationsList.Contains(word))
-            {
-                PermutationsList.Add(word); // The word is a solution
-                NumberOfStrings++;
-            }
-                
-            Char[] WordArray = word.ToCharArray();
+            if(NumberOfStrings != MaxPermutations)
+                return Permutate(PermutationsList, 0, MaxPermutations, word);
 
-            while (!(NumberOfStrings == MaxPermutations))
-            {
-                for (int j = 0; j < word.Length - 1; j++)
-                {
-                    var temp = WordArray[j];
-                    WordArray[j] = WordArray[j + 1];
-                    WordArray[j + 1] = temp;
-                    Word = GetString(WordArray);
-                    if (!PermutationsList.Contains(Word))
-                    {
-                        PermutationsList.Add(Word);
-                        NumberOfStrings++;
-                    }
-                }
-            }
             return PermutationsList;
         }
+        private static List<string> Permutate (List<string> ls, int k, int MaxPermutations, string word)
+        {
+            char[] WordArray = word.ToCharArray();
+
+            if (k >= word.Length - 1) 
+                k = 0;
+
+            Swap(ref WordArray[k], ref WordArray[k + 1]);
+            
+            Word = GetString(WordArray);
+
+                if (!ls.Contains(Word))
+                {
+                    ls.Add(Word);
+                    NumberOfStrings++;
+                }
+
+                if (!(NumberOfStrings == MaxPermutations))
+                    return Permutate(ls, k + 1, MaxPermutations, Word);
+            
+                return ls;
+                
+        } 
         private static int GetMaxPermutations(string Word)
         {
             int NumberOfDifferents = 1;
@@ -57,21 +59,22 @@ namespace Permutations
 
             return MaxPermutations;
         }
-        private static int Factorial(int n)
+        private static int Factorial(int n, int Tail = 1)
         {
-            for (int i = n - 1; i > 0; i--)
-                n *= i;
+            if (n > 0)
+                return Factorial(n - 1, Tail * n);
 
-            return n;
+            return Tail;
         }
 
-        private static string GetString(char[] array)
+        private static string GetString(char[] array) => string.Join("",array);
+        
+        private static void Swap (ref char A, ref char B)
         {
-            string str = string.Concat(array);
-
-            return str;
+            var temp = A;
+            A = B;
+            B = temp;
         }
-
         public static void PrintList(List<string> List)
         {
             foreach (string a in List)
@@ -85,6 +88,10 @@ namespace Permutations
     {
         static void Main(string[] args)
         {
+            Permutations.PrintList(Permutations.SinglePermutations("a"));
+            Console.WriteLine();
+            Permutations.PrintList(Permutations.SinglePermutations("ab"));
+            Console.WriteLine();
             Permutations.PrintList(Permutations.SinglePermutations("aabb"));
             Console.ReadKey();
         }
