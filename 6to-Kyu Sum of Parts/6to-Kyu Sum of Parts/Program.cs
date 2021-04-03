@@ -8,16 +8,15 @@ namespace SumOfParts
         public static int[] PartsSums(int[] ls)
         {
             int End = ls.Length;
-            int[] Solution = new int[End+1];
-            int Counter = 0;
+            int[] Solution = new int[End + 1];
+            int Sum = 0;
+            Solution[0] = ls.Sum();
 
-                do
-                {
-                    Solution[Counter] = ls.Sum();
-                    ls = ls.Where(x => x != ls[0])
-                           .ToArray();
-                    Counter++;
-                } while (ls.Length != 0);
+            for (int i = 1; i < Solution.Length - 1; i++)
+            {
+                Sum += ls[i - 1];
+                Solution[i] = Solution[0] - Sum;
+            }
 
             return Solution;
         }
@@ -31,7 +30,7 @@ namespace SumOfParts
             foreach (int a in xd)
                 Console.Write(a+" ");
 
-            Console.ReadKey();
+            Console.ReadKey();// 21, 20, 18, 15, 11, 6, 0 
         }
     }
 }
