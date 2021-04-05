@@ -1,0 +1,13 @@
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\bin\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.exe
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\bin\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.deps.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\bin\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.runtimeconfig.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\bin\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.runtimeconfig.dev.json
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\bin\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\bin\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.csprojAssemblyReference.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.AssemblyInfoInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.AssemblyInfo.cs
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.csproj.CoreCompileInputs.cache
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.dll
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.pdb
+C:\Users\astef_000\Desktop\Jalinson\Programming\Sandbox\5-Kyu_Josephus_Permutation\5-Kyu_Josephus_Permutation\obj\Debug\netcoreapp3.1\5-Kyu_Josephus_Permutation.genruntimeconfig.cache
