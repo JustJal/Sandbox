@@ -3,6 +3,7 @@ BinaryTreeMethods/BinaryTreeMethods/obj/
 *.exe
 */obj/
 */bin/
+*.lua
 BinaryTreeMethods/BinaryTreeMethods/bin/Debug/netcoreapp3.1/BinaryTreeMethods.deps.json
 BinaryTreeMethods/BinaryTreeMethods/bin/Debug/netcoreapp3.1/BinaryTreeMethods.dll
 BinaryTreeMethods/BinaryTreeMethods/bin/Debug/netcoreapp3.1/BinaryTreeMethods.exe
@@ -21,4 +22,3 @@ BinaryTreeMethods/BinaryTreeMethods/obj/Debug/netcoreapp3.1/BinaryTreeMethods.ex
 BinaryTreeMethods/BinaryTreeMethods/obj/Debug/netcoreapp3.1/BinaryTreeMethods.genruntimeconfig.cache
 BinaryTreeMethods/BinaryTreeMethods/obj/Debug/netcoreapp3.1/BinaryTreeMethods.pdb
 BinaryTreeMethods/.vs/BinaryTreeMethods/v16/.suo
-Contraseña prueba.lua
