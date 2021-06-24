@@ -1,0 +1,38 @@
+﻿<EditForm Model="@Persona" OnValidSubmit="@OnValidSumbit">
+    <div class="form-field">
+        <label>Name:</label>
+        <div>
+            <InputText @bind-Value="Persona.Name" />
+            <ValidationMessage For="@(() => Persona.Name)" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label>Department:</label>
+        <div>
+            <InputText @bind-Value="Persona.Department" />
+            <ValidationMessage For="@(() => Persona.Department)" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label>City:</label>
+        <div>
+            <InputText @bind-Value="Persona.City" />
+            <ValidationMessage For="@(() => Persona.City)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">@BtnText</button>
+    <DataAnnotationsValidator />
+</EditForm>
+@code {
+    [Parameter]
+    public Persona Persona { get; set; } = new();
+
+    [Parameter]
+    public string BtnText { get; set; } = "Save Changes";
+
+    [Parameter]
+    public EventCallback OnValidSumbit { get; set; }
+
+
+
+}

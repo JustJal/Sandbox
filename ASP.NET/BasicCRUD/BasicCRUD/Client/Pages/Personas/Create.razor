@@ -1,0 +1,14 @@
+﻿@page "/crear-persona"
+@inject HttpClient http
+@inject NavigationManager UriHelper
+<h3>Create</h3>
+<Form BtnText="Create" Persona="@persona" OnValidSumbit="@CrearPersona"></Form>
+@code {
+    Persona persona = new();
+
+    async Task CrearPersona()
+    {
+        await http.PostAsJsonAsync("personas", persona);
+        UriHelper.NavigateTo("/indice-personas");
+    }
+}

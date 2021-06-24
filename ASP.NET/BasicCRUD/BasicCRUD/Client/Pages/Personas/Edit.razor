@@ -1,0 +1,21 @@
+﻿@page "/editar-personas/{IdPersona:int}"
+@inject HttpClient Http
+@inject NavigationManager UriHelper
+<h3>Edit</h3>
+<Form BtnText="Save Changes" Persona="@persona" OnValidSumbit="@EditarPersona"></Form>
+@code {
+    [Parameter] 
+    public int IdPersona { get; set; }
+
+    Persona persona = new();
+    protected async override Task OnParametersSetAsync()
+    {
+        persona = await Http.GetFromJsonAsync<Persona>($"personas/{IdPersona}");
+    }
+
+    async Task EditarPersona()
+    {
+        await Http.PutAsJsonAsync("personas", persona);
+        UriHelper.NavigateTo("/indice-personas");
+    }
+}

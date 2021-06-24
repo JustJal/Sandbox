@@ -1,0 +1,69 @@
+﻿@page "/indice-personas"
+@inject HttpClient Http
+@inject IJSRuntime JS 
+<h3>Personas</h3>
+<div>
+    <a href="crear-persona" class="btn btn-success">Nueva Persona</a>
+</div>
+
+@if(personas == null)
+ {
+    <p>cargando...</p>
+ }
+else if(personas.Length == 0)
+{
+    <p>No hay personas en la base de datos</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Departament</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var per in personas)
+             {
+                <tr>
+                    <td>
+                        <a class="btn btn-success" href="editar-personas/@per.ID">Edit</a>
+                        <button class=" btn btn-danger" @onclick ="(()=> BorrarPersona(per.ID))">Delete</button>
+                    </td>
+                    <td>@per.ID</td>
+                    <td>@per.Name</td>
+                    <td>@per.Department</td>
+                    <td>@per.City</td>
+                </tr>
+             }
+        </tbody>
+    </table>
+}
+
+@code {
+    Persona[] personas { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarPersonas();
+    }
+    async Task CargarPersonas()
+    {
+        personas = await Http.GetFromJsonAsync<Persona[]>("personas");
+    }
+
+    async Task BorrarPersona(int id)
+    {
+        var PersonaSeleccionada = personas.First(x => x.ID.Equals(id));
+        string Msg = $"Do you want to delete {PersonaSeleccionada.Name}?";
+
+        if(await JS.InvokeAsync<bool>("confirm", Msg))
+        {
+            await Http.DeleteAsync($"personas/{id}");
+            await CargarPersonas();
+        }
+    }
+}
